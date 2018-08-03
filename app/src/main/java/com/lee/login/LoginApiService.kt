@@ -2,9 +2,7 @@ package com.lee.login
 
 import com.framework.http.model.BaseResponse
 import io.reactivex.Observable
-import okhttp3.RequestBody
-import retrofit2.http.Body
-import retrofit2.http.POST
+import retrofit2.http.*
 
 /**
  * Created by lichen on 2018/6/6.
@@ -16,6 +14,8 @@ interface LoginApiService {
      * @param fieldMap the field map
      * @return 登录信息
      */
+    @FormUrlEncoded
     @POST("base-gateway")
-    fun login(@Body fieldMap: RequestBody): Observable<BaseResponse<MemberLoginResponse>>
+    fun login(@FieldMap fieldMap: Map<String, String>): Observable<BaseResponse<MemberLoginResponse>>
+
 }

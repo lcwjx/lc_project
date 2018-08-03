@@ -48,4 +48,12 @@ dependencies {
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+    implementation 'com.just.agentweb:agentweb:4.0.2' // (必选)
+    implementation 'com.just.agentweb:download:4.0.2' // (可选)
+    implementation 'com.just.agentweb:filechooser:4.0.2'// (可选)
+
+    compile 'com.github.lzyzsd:jsbridge:1.0.4'
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-7'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-7'
 }

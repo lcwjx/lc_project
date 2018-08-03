@@ -7,11 +7,13 @@ import com.trello.rxlifecycle2.LifecycleTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import okhttp3.RequestBody
+import retrofit2.http.FieldMap
 
 /**
  * Created by lichen on 2018/6/5.
  */
 class LoginPresenter<V : LoginContract.View> : BasePresenter<V>(), LoginContract.Presenter<V> {
+
     /**
      * login请求唯一标识
      */
@@ -21,7 +23,7 @@ class LoginPresenter<V : LoginContract.View> : BasePresenter<V>(), LoginContract
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun login(filedMap: RequestBody, lifecycleTransformer: LifecycleTransformer<BaseResponse<MemberLoginResponse>>) {
+    override fun login(filedMap: Map<String, String>, lifecycleTransformer: LifecycleTransformer<BaseResponse<MemberLoginResponse>>) {
 
         mvpView.showLoading(true, LOGIN)
         RetrofitFactory.getInstance()
@@ -40,7 +42,7 @@ class LoginPresenter<V : LoginContract.View> : BasePresenter<V>(), LoginContract
                         if (isTokenExpired) {
                             mvpView.openActivityOnTokenExpire()
                         } else {
-                            mvpView.showToastMessage(e.getMsg())
+                            mvpView.showToastMessage(e.msg)
                         }
                     }
 

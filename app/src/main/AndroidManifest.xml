@@ -27,7 +27,6 @@
         <activity android:name=".LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -41,6 +40,26 @@
             android:name=".login.LoginActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".agentweb.WebActivity"/>
+        <activity android:name=".agentweb.CommonActivity"/>
+        <activity android:name=".agentweb.MainActivity"/>
+        <activity android:name=".BrowserActivity"/>
+
+        <activity android:name=".URLReceiveActivity">
+            <!-- Schame -->
+            <intent-filter>
+                <data
+                    android:host="zhaoyanjun"
+                    android:scheme="arouter" />
+
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+            </intent-filter>
+        </activity>
     </application>
+
 
 </manifest>

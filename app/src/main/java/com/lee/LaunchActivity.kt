@@ -3,6 +3,8 @@ package com.lee
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.framework.base.BaseActivity
+import com.framework.base.BasePresenter
+import com.framework.base.MvpView
 import com.framework.router.RouterUtils
 import com.framework.utils.RxTimerUtil
 import com.lee.constant.AppRouterConstants

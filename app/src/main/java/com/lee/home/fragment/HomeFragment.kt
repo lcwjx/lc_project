@@ -2,15 +2,19 @@ package com.lee.home.fragment
 
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.framework.base.BaseFragment
+import com.framework.router.RouterConstants
+import com.framework.router.RouterUtils
 import com.framework.utils.ToastUtils
 import com.framework.utils.Utils
 import com.framework.wiget.banner.BannerConfig
 import com.framework.wiget.banner.listener.OnBannerListener
 import com.lee.R
+import com.lee.constant.AppRouterConstants
 import com.lee.home.GlideImageLoader
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
@@ -43,6 +47,11 @@ class HomeFragment : BaseFragment(), HomeContract.View, OnBannerListener {
 
     override fun onBannerClick(position: Int) {
         ToastUtils.showCusToast(Utils.getApp(), "" + position)
+        when (position) {
+            0 -> RouterUtils.navigation(AppRouterConstants.MAIN_ACTIVITY)
+            1 -> RouterUtils.navigation(AppRouterConstants.BROWSER_ACTIVITY)
+            2 -> RouterUtils.navigation(RouterConstants.LOGIN_ACTIVITY)
+        }
     }
 
     private lateinit var rootView: View
@@ -56,7 +65,8 @@ class HomeFragment : BaseFragment(), HomeContract.View, OnBannerListener {
     }
 
     private fun initView(homePresenter: HomePresenter<HomeContract.View>) {
-        rootView.recycleListView.layoutManager = GridLayoutManager(Utils.getApp(), 1)
+        rootView.recycleListView.isNestedScrollingEnabled = false
+        rootView.recycleListView.layoutManager = GridLayoutManager(Utils.getApp(), 2)
         homePresenter.getData()
     }
 }

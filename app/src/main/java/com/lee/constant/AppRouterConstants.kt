@@ -6,4 +6,6 @@ package com.lee.constant
 object AppRouterConstants {
     const val LAUNCH_ACTIVITY = "/app/LaunchActivity"
     const val HOME_PAGE_ACTIVITY = "/app/HomePageActivity"
+    const val MAIN_ACTIVITY = "/app/MainActivity"
+    const val BROWSER_ACTIVITY = "/app/BrowserActivity"
 }

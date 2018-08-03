@@ -33,7 +33,7 @@ interface LoginContract {
          * @param filedMap the filed map
          * @param lifecycleTransformer the lifecycle transformer
          */
-        fun login(filedMap: RequestBody, lifecycleTransformer: LifecycleTransformer<BaseResponse<MemberLoginResponse>>)
+        fun login(filedMap: Map<String, String>, lifecycleTransformer: LifecycleTransformer<BaseResponse<MemberLoginResponse>>)
 
         /**
          * 发送验证码.
@@ -43,9 +43,7 @@ interface LoginContract {
          */
         fun sendSms(filedMap: RequestBody, lifecycleTransformer: LifecycleTransformer<BaseResponse<String>>)
 
-
     }
-
 
 }
 

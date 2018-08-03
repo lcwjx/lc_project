@@ -3,6 +3,8 @@ package com.lee.home
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.framework.base.BaseActivity
+import com.framework.base.BasePresenter
+import com.framework.base.MvpView
 import com.lee.R
 import com.lee.constant.AppRouterConstants
 import com.lee.home.fragment.HomeFragment
@@ -20,6 +22,7 @@ class HomePageActivity : BaseActivity() {
 
     val TAG_HOME = "tag_home"
     val TAG_MINE = "tag_mine"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
